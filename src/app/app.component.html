@@ -1,9 +1,9 @@
 <hello name="{{ name }}"></hello>
-<a [routerLink]="['/']">Home</a>
-<a [routerLink]="['/blog']">Blog</a>
+
+<a [routerLink]="['/']">Blog</a>
 <br><br>
-<a [routerLink]="['/blog']" [queryParams] ="{messageType:'text'}">Filter By Text</a>
-<a [routerLink]="['/blog']" [queryParams] ="{messageType:'photo'}">Filter By Photo</a>
-<a [routerLink]="['/blog']" [queryParams] ="{messageType:'vedio'}">Filter By Vedio</a>
+<a [routerLink]="['/']" [queryParams] ="{messageType:'text'}">Filter By Text</a>
+<a [routerLink]="['/']" [queryParams] ="{messageType:'photo'}">Filter By Photo</a>
+<a [routerLink]="['/']" [queryParams] ="{messageType:'vedio'}">Filter By Vedio</a>
 <br>
 <router-outlet></router-outlet>
