@@ -1,0 +1,10 @@
+<div class="grid-container">
+  <div class="grid-item" *ngFor="let post of posts">
+      <div class="card">
+      <h2>{{post.name}}</h2>
+      <h5>Message Type: {{post.messageType}}</h5>
+      <p>Access Level: {{post.accesslevel}}</p>
+      <p>Description:  {{post.desc}}</p>
+    </div>
+  </div>
+</div>

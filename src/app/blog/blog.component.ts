@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 export interface Post{
   name:string;
   accesslevel:string;
@@ -13,7 +14,9 @@ export interface Post{
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:ActivatedRoute, private router: Router) {
+     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+   }
 
  filteredBy:string;
   posts:Post[];
@@ -29,8 +32,15 @@ export class BlogComponent implements OnInit {
     { name: 'I', accesslevel:'class-5', messageType:'text',desc:'II'}
     ];
     ngOnInit(){
+      console.log("dsadada");
       this.posts = this.originalPosts;
+      let param1 = this.route.snapshot.queryParams["messageType"];
+      if(param1 !=null && param1 !=undefined){
+        this.posts = this.originalPosts.filter(e=>e.messageType===param1);
+      }
+     
     }
+   
     filterBy(textStr:string){
       console.log(this.posts);
       this.filteredBy = textStr;
